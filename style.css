@@ -29,6 +29,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav-link {
@@ -38,12 +39,12 @@ body {
   padding: 8px 16px;
   border-radius: 5px;
   transition: background 0.3s;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .nav-link:hover,
 .nav-link:active {
-  background-color: rgba(180, 180, 180, 0.7);
+  background-color: rgba(180, 180, 180, 0.6);
 }
 
 /* Hero Section (index only) */
@@ -262,15 +263,30 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 
   .hero-logo,
   .hero-map {
     width: 100px;
-    top: 60px;
+    top: 20px;
+  }
+
+  .hero-logo {
+    right: 20px;
+  }
+
+  .hero-map {
+    left: 20px;
   }
 
   .hero-text .desa,
@@ -279,7 +295,7 @@ footer {
   }
 
   .hero-text .kelompok {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .hero-text .kkn {
@@ -287,11 +303,12 @@ footer {
   }
 
   .hero-text .nomor {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-overlay {
-    margin-top: 70px;
+    margin-top: 100px;
+    padding: 10px;
   }
 
   .container {
