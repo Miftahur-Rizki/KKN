@@ -1,0 +1,63 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url('images/covers.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+/* Overlay untuk semua halaman */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+  background-color: rgba(0, 100, 0, 0.4);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #ffd700;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 100, 0, 0.4);
+  color: #fff;
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
