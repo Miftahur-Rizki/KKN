@@ -1,8 +1,22 @@
-/* Spasi atas agar konten tidak tertutup navbar */
+/* Background Gunung */
+body {
+  background-image: url('images/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Container isi */
 .container {
+  background-color: rgba(255, 255, 255, 0.5); /* Semakin kecil angkanya, semakin transparan */
+  border-radius: 12px;
   padding: 6rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
   flex: 1;
 }
+
 
 /* Slider Foto Bersama */
 .group-section {
@@ -61,6 +75,9 @@
   text-align: center;
   transition: transform 0.3s;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .team-card:hover {
   transform: translateY(-5px);
@@ -80,6 +97,16 @@
   font-size: 0.9rem;
   color: #555;
 }
+.jabatan {
+  display: inline-block;
+  background-color: #2E7D32;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
 
 /* Responsif */
 @media (max-width: 992px) {
@@ -94,4 +121,39 @@
   .slide {
     height: 250px;
   }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #444;
+}
+footer a {
+  color: #2E7D32;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+.ig-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2E7D32;
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+.ig-button:hover {
+  background-color: #1b5e20;
+}
+.ig-icon {
+  width: 20px;
+  height: 20px;
 }

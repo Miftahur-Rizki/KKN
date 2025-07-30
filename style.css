@@ -1,70 +1,309 @@
-/* Reset & Base */
+/* Reset dan dasar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-  /* ✅ Responsif background image */
-  background-image: url('images/covers.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  background-image: url('images/background.png');
   background-size: cover;
-  background-attachment: scroll;
-
-  color: #fff;
-}
-
-/* Overlay agar teks lebih terbaca */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 /* Navbar */
 .navbar {
-  background-color: rgba(0, 100, 0, 0.4);
-  padding: 1rem;
-  position: fixed;
+  background-color: transparent;
+  padding: 15px 30px;
+  position: absolute;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
 }
+
 .nav-container {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-.nav-link:hover,
-.nav-link.active {
-  color: #ffd700;
+  gap: 20px;
 }
 
-/* Footer */
-footer {
-  background-color: rgba(0, 100, 0, 0.4);
-  color: #fff;
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background 0.3s;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover,
+.nav-link:active {
+  background-color: rgba(180, 180, 180, 0.7);
+}
+
+/* Hero Section (index only) */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 0.8rem;
+  color: white;
+  padding: 20px;
+  margin-top: 60px; /* lebih turun */
+}
+
+.hero-logo {
+  position: absolute;
+  top: 100px;
+  right: 80px;
+  width: 180px;
+  z-index: 10;
+}
+
+.hero-map {
+  position: absolute;
+  top: 100px;
+  left: 80px;
+  width: 180px;
+  z-index: 10;
+}
+
+.hero-text {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.hero-text .desa {
+  font-family: 'Segoe Script', cursive;
+  font-size: 2.2rem;
+  color: #fdd835;
+}
+
+.hero-text .kecamatan {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #1b5e20;
+  margin: 5px 0;
+}
+
+.hero-text .kelompok {
+  font-size: 4.7rem;
+  font-weight: bold;
+  color: white;
+  margin: 10px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-text .kkn {
+  font-size: 2.2rem;
+  font-family: 'Segoe Script', cursive;
+  color: #fdd835;
+  margin: 10px 0;
+}
+
+.hero-text .nomor {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* About Section */
+.about-section {
+  padding: 6rem 2rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+  color: #333;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-card {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-4px);
+}
+
+.about-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.about-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #1b5e20;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Report Page */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 6rem 2rem 2rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2f4f2f;
+  font-size: 2rem;
+}
+
+.accordion-container {
+  margin-top: 2rem;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.accordion-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: #a5d6a7;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.accordion-btn:hover {
+  background-color: #81c784;
+}
+
+.accordion-btn.active {
+  background-color: #66bb6a;
+}
+
+.accordion-content {
+  padding: 0 1rem 1rem;
+  background-color: #fff;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+}
+
+.media-gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.media-gallery img,
+.media-gallery video {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1rem;
+  color: #fff;
   font-size: 0.9rem;
-  margin-top: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-logo,
+  .hero-map {
+    width: 100px;
+    top: 60px;
+  }
+
+  .hero-text .desa,
+  .hero-text .kecamatan {
+    font-size: 1.2rem;
+  }
+
+  .hero-text .kelompok {
+    font-size: 2.5rem;
+  }
+
+  .hero-text .kkn {
+    font-size: 1.3rem;
+  }
+
+  .hero-text .nomor {
+    font-size: 2rem;
+  }
+
+  .hero-overlay {
+    margin-top: 70px;
+  }
+
+  .container {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .accordion-btn {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .about-card img {
+    height: 220px;
+  }
 }

@@ -15,6 +15,42 @@ document.addEventListener("DOMContentLoaded", () => {
     // Tambahkan deskripsi hingga Hari 35 sesuai kebutuhan
   ];
 
+  // Tambahkan bagian keberangkatan
+  const keberangkatanItem = document.createElement("div");
+  keberangkatanItem.classList.add("accordion-item");
+
+  const keberangkatanBtn = document.createElement("button");
+  keberangkatanBtn.classList.add("accordion-btn");
+  keberangkatanBtn.textContent = "Keberangkatan";
+
+  const keberangkatanContent = document.createElement("div");
+  keberangkatanContent.classList.add("accordion-content");
+  keberangkatanContent.innerHTML = `
+    <div class="media-gallery">
+      <img src="img/keberangkatan1.jpg" alt="Keberangkatan " class="media" />
+      <video controls class="media">
+        <source src="video/keberangkatan1.mp4" type="video/mp4" />
+        Browser tidak mendukung pemutaran video.
+      </video>
+      <video controls class="media">
+        <source src="video/keberangkatan2.mp4" type="video/mp4" />
+        Browser tidak mendukung pemutaran video.
+      </video>
+      <video controls class="media">
+        <source src="video/keberangkatan3.mp4" type="video/mp4" />
+        Browser tidak mendukung pemutaran video.
+      </video>
+    </div>
+    <div class="description">
+      <p>Keberangkatan dari kampus menuju lokasi KKN, persiapan logistik dan doa bersama.</p>
+    </div>
+  `;
+
+  keberangkatanItem.appendChild(keberangkatanBtn);
+  keberangkatanItem.appendChild(keberangkatanContent);
+  container.appendChild(keberangkatanItem);
+
+
   for (let i = 1; i <= 14; i++) { // Ubah ke 35 bila sudah ada semua
     const item = document.createElement("div");
     item.classList.add("accordion-item");
