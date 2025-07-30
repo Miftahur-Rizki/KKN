@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html, body {
   height: 100%;
   width: 100%;
@@ -12,12 +13,18 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: url('images/covers.jpg') no-repeat center center fixed;
+
+  /* ✅ Responsif background image */
+  background-image: url('images/covers.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
+  background-attachment: scroll;
+
   color: #fff;
 }
 
-/* Overlay untuk semua halaman */
+/* Overlay agar teks lebih terbaca */
 body::before {
   content: "";
   position: fixed;
